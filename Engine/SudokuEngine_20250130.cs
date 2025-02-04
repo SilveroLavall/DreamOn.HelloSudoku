@@ -1,9 +1,9 @@
 using System.Diagnostics;
 using System.Numerics;
+using DreamOn.HelloSudoku.SudokuCollections;
 namespace DreamOn.HelloSudoku.Engine;
 internal class RunProperties
 {
-    public string InputFile { get; set; } = @"SudokuCollections/all_17_clue_sudokus.txt";
     public int SkipInputLines { get; set; } = 0;
     public int TakeInputLines { get; set; } = 1000;
     public int DisplayInterval { get; set; } = 200;
@@ -43,7 +43,7 @@ internal class SudokuEngine_20250130(RunProperties runProperties)
     public RunResult RunResult { get; set; } = new();
     internal void StartProcessingFile()
     {
-        var inputLines = File.ReadAllLines(RunProperties.InputFile);
+        var inputLines = new SudokuPuzzles().All17ClueSudokus;
         RunResult.Stopwatch.Start();
         RunResult.TotalInputLines = inputLines.Length - 1;
         var response = new SudokuResponse("", new(), new());
