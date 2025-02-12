@@ -4,3 +4,8 @@ GET {{DreamOn.HelloSudokuWebAPI_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+GET {{DreamOn.HelloSudokuWebAPI_HostAddress}}/hellosudoku/
+Accept: application/json
+
+###

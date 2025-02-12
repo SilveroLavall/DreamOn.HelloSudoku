@@ -1,5 +1,5 @@
 ﻿using System.Diagnostics;
-using DreamOn.HelloSudokuConsole.Engine;
+using DreamOn.HelloSudoku;
 Console.WriteLine("Start ############################################################################################################################################");
 RunProperties runProperties = new();
 Console.WriteLine($"{runProperties.ToJson()} {nameof(SudokuEngine_20250130)} debugger:{Debugger.IsAttached}");

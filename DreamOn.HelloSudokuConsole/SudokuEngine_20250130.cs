@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using System.Numerics;
-namespace DreamOn.HelloSudokuConsole.Engine;
+namespace DreamOn.HelloSudoku;
 internal class RunProperties
 {
     public int SkipInputLines { get; set; } = 0;
