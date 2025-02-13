@@ -24,6 +24,11 @@ Hello Sudoku contains single threaded logic written in C# to solve sudoku puzzle
 - reboot
 - apt install dotnet-sdk-8.0
 
+## Docker
+
+- docker ps
+- docker images
+
 ## Setup Git & Clone Repository
 - git config --global user.name "Silvero van Henningen"
 - git config --global user.email silvero_vanhenningen@hotmail.com
@@ -57,6 +62,9 @@ Hello Sudoku contains single threaded logic written in C# to solve sudoku puzzle
 
 1. dotnet publish DreamOn.HelloSudokuWebAPI.csproj -t:PublishContainer -p:EnableSdkContainerSupport=true
 2. docker run -p 5000:8080 dreamon-hellosudoku
+
+1. dotnet publish DreamOn.HelloSudokuWorker.csproj -t:PublishContainer -p:EnableSdkContainerSupport=true
+2. docker run -p dreamon-hellosudokuworker
 
 ## Publish Executable
 

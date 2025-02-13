@@ -15,7 +15,7 @@ public class Worker : BackgroundService
             {
                 _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
                 var intervalResults = new SudokuEngine_20250130(new()).StartProcessingSudokuPuzzles();
-                _logger.LogInformation("Result: {result}", intervalResults);
+                _logger.LogInformation("Result: {result}", intervalResults.ToJson());
             }
             await Task.Delay(5000, stoppingToken);
         }
