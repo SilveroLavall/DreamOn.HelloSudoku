@@ -1,0 +1,23 @@
+﻿@using DreamOn.HelloSudoku;
+@page "/counter"
+<PageTitle>Counter</PageTitle>
+<h1>Counter</h1>
+<p role="status">Current count: @currentCount</p>
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<h1>Hello Sudoku</h1>
+<p role="status">Sudoku Result: @SudokuResults</p>
+<button class="btn btn-primary" @onclick="GetSudokuResults">Click me</button>
+
+@code {
+    private int currentCount = 0;
+    private string SudokuResults = string.Empty;
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+    private void GetSudokuResults()
+    {
+        var result = (new SudokuEngine_20250130(new())).StartProcessingSudokuPuzzles();
+        SudokuResults = result.ToJson();
+    }
+}
