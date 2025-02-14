@@ -8,11 +8,13 @@ Hello Sudoku contains single threaded logic written in C# to solve sudoku puzzle
 
 - Get-ComputerInfo
 - Get-NetIPAddress
+
+## Winget
+
 - winget install Git.Git
 - winget install Microsoft.DotNet.SDK.9
 - winget install Microsoft.PowerShell
 - winget install Microsoft.VisualStudioCode
-- Setup SSH keys
 
 ## Ubuntu
 
@@ -55,7 +57,7 @@ Hello Sudoku contains single threaded logic written in C# to solve sudoku puzzle
 
 - ssh -v root@87.106.173.246
 
-## Publish Container
+## Publish Container (dotnet docker)
 
 1. dotnet publish DreamOn.HelloSudoku.csproj -t:PublishContainer -p:EnableSdkContainerSupport=true
 2. docker run dreamon-hellosudoku
@@ -66,7 +68,7 @@ Hello Sudoku contains single threaded logic written in C# to solve sudoku puzzle
 1. dotnet publish DreamOn.HelloSudokuWorker.csproj -t:PublishContainer -p:EnableSdkContainerSupport=true
 2. docker run -p dreamon-hellosudokuworker
 
-## Publish Executable
+## Publish Executable (dotnet)
 
 1. dotnet publish DreamOn.HelloSudoku.csproj -r linux-x64
 2. cd bin/Release/net8.0/linux-x64/publish/
@@ -75,3 +77,18 @@ Hello Sudoku contains single threaded logic written in C# to solve sudoku puzzle
 1. dotnet publish DreamOn.HelloSudoku.csproj -r win-x64
 2. cd bin/Release/net9.0/win-x64/publish/
 3. DreamOn.HelloSudoku.exe
+
+## Dotnet - Create Lib
+
+- dotnet build
+
+## PowerShell - Use DLL
+
+- Add-Type -Path C:\Users\Silvero\GitHub\DreamOn.HelloSudoku\DreamOn.HelloSudokuLib\bin\Debug\net9.0\DreamOn.HelloSudokuLib.dll
+- $runProperties = New-Object DreamOn.HelloSudokuLib.RunProperties
+- $SudokuEngine = New-Object DreamOn.HelloSudokuLib.SudokuEngine_20250130($runProperties)
+- $sudokuResult = $SudokuEngine.StartProcessingSudokuPuzzles()
+- $sudokuResult
+- $sudokuResult | ConvertTo-Csv
+- $sudokuResult | ConvertTo-Html
+- $sudokuResult | ConvertTo-Json
